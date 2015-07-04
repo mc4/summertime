@@ -1,9 +1,8 @@
-import sys, socket
 from optparse import OptionParser
+import sys, socket
 
 def scan_ports(host, scope):
-	""" host is target website
-		range is a tuple that holds port range """
+	""" scan ports and tries to establish a TCP connection """
 	start = int(scope[0])
 	end = int(scope[1])
 	open_ports=[]
@@ -34,7 +33,7 @@ def scan_ports(host, scope):
 	return open_ports
 
 def print_open_ports(open_ports):
-	""" prints a list of open ports """
+	""" prints a list of open ports to stdout """
 	if(len(open_ports)) == 0:
 		print "no port open!"
 		return
@@ -49,7 +48,6 @@ def main():
 		help="specify target host")
 	parser.add_option('-P', dest = 'ports', type = 'string', \
 		help = "specify port range separated by a '-' e.g. 1000-8000")
-
 	(options, args) = parser.parse_args()
 
 	if(options.host == None or options.ports == None):
