@@ -1,7 +1,6 @@
 import re
-import sys
 import json
-import socket
+from socket import gethostbyname
 from urllib2 import urlopen
 
 #grabs local ip
@@ -11,16 +10,15 @@ def get_local_ip():
 		html = response.read()
 	except:
 		print 'error with "http://checkip.dyndns.com/"'
-		sys.exit()
+		exit()
 	ip = re.search('\d+.\d+.\d+.\d+', html)
 	return str(ip.group())
 
-#ip of whoever you
 ip = ''
 address = raw_input('Enter address or ip of target... or Enter for user information: ')
 
 if address:
-	ip = socket.gethostbyname(address)
+	ip = gethostbyname(address)
 elif address == None:
 	ip = get_local_ip()
 
