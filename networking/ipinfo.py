@@ -27,15 +27,20 @@ ip_info = 'http://ipinfo.io/'+ip+'/json'
 data = json.load(urlopen(ip_info))
 
 #extract data
+hostname = data['hostname']
 city = data['city']
 region = data['region']
 country = data['country']
+postal = data['postal']
 location = data['loc']
 org = data['org']
 
 #print data
+print 'target ip is: ' + ip
+print 'target hostname is: ' + hostname
 print 'target city is: ' + city
 print 'target region is: ' + region
 print 'target country is: ' + country
+print 'target zipcode is: ' + postal
 print 'target approximate location is: ' + location
 print 'target ISP(?) is: ' + org
