@@ -12,14 +12,14 @@ def get_local_ip():
 		print 'error with "http://checkip.dyndns.com/"'
 		exit()
 	ip = re.search('\d+.\d+.\d+.\d+', html)
-	return str(ip.group())
+	return ip.group()
 
 ip = ''
 address = raw_input('Enter address or ip of target... or Enter for user information: ')
 
 if address:
 	ip = gethostbyname(address)
-elif address == None:
+else:
 	ip = get_local_ip()
 
 #get data of ip
@@ -36,6 +36,7 @@ location = data['loc']
 org = data['org']
 
 #print data
+print '---------------------------------------------------------------'
 print 'target ip is: ' + ip
 print 'target hostname is: ' + hostname
 print 'target city is: ' + city
