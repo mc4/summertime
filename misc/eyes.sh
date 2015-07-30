@@ -1,7 +1,13 @@
-#script for OSX that reminds user to not stare at the screen for too long
+#**************************************************************************
+#script for OSX that reminds user to not stare at the screen for too long *
+# by posting an alert to Notification Center using terminal Notifier      *
+# to install terminal notifier with *sudo gem install terminal-notifier"  *
+#**************************************************************************
+
+#NOTES: only works for the life of bash shell
 
 #recommended to be run in the background with "./eyes.sh &"
-#possibly might need local permissions changed
+#possibly will need local permissions changed
 
 while [ 1 ]
 do
@@ -9,7 +15,5 @@ do
 	terminal-notifier -message "Take care of your eyes." -title "Reminder"
 done
 
-#NOTES: only works for the life of bash shell
-
+#TODO: find a more clever way to kill the process...
 #useful relevant commands "jobs -l" gets pid and use "kill PID" to terminate process
-#TODO: find a more clever way to do this.
