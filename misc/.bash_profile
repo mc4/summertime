@@ -22,6 +22,15 @@
 #   ------------------------------------------------------------
     export EDITOR=/usr/bin/Sublime\ Text
 
+#	Keep all the history    
+    HISTFILESIZE=10000000
+
+# 	Ignore ls in my history
+	export HISTIGNORE=ls
+
+# 	Keep the time of commands used
+	HISTTIMEFORMAT='%F %T  '
+
 #   ---------------------------------------
 #   NETWORKING
 #   ---------------------------------------
