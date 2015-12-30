@@ -17,4 +17,3 @@ done
 
 #TODO: find a more clever way to kill the process...
 #useful relevant commands "jobs -l" gets pid and use "kill PID" to terminate process
-#Lit
